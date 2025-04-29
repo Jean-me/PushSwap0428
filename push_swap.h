@@ -6,7 +6,7 @@
 /*   By: mesasaki <mesasaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 19:58:07 by mesasaki          #+#    #+#             */
-/*   Updated: 2025/04/28 22:41:41 by mesasaki         ###   ########.fr       */
+/*   Updated: 2025/04/29 19:20:24 by mesasaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,5 @@ int				over_int(char *str);
 int				ft_isdigit(int c);
 int				is_number(char *str);
 int				compare_number(t_stack **stack);
+int 			compare_n(int *arr, int n);
 #endif

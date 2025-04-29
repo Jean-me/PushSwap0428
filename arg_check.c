@@ -6,7 +6,7 @@
 /*   By: mesasaki <mesasaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 19:45:41 by mesasaki          #+#    #+#             */
-/*   Updated: 2025/04/28 22:47:18 by mesasaki         ###   ########.fr       */
+/*   Updated: 2025/04/29 19:29:25 by mesasaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,54 @@ int	over_int(char *str)
 	return (NUMBER);
 }
 
+int compare_n(int *arr, int n)
+{
+	int i, j;
+
+	i = 0;
+	while (i < n)  // 最後の1つは比較対象がないので n - 1 まで
+	{
+		j = i + 1;
+		while (j < n)
+		{
+			if (arr[i] == arr[j])
+				return (NOT_NUMBER);
+			j++;
+		}
+		i++;
+	}
+	return (NUMBER);
+}
+
+
+// int compare_n(int *arr, int n)
+// {
+// 	int first;
+// 	int next;
+// 	int i;
+// 	int c;
+
+// 	i = 0;
+// 	c = 1;
+	
+// 	first = arr[i];
+// 	while (i < n)//引数分繰り返す
+// 	{
+// 		next = arr[c];
+// 		while (c < n)
+// 		{
+// 			if (first == next)
+// 				return (NOT_NUMBER);
+// 			next = arr[c++];
+// 		}
+// 		first = arr[i++];
+// 		c = i + 1;
+// 	}
+// 	return (NUMBER);
+// }
+
 int	compare_number(t_stack **stack)
 {
-	ft_printf("test\n");
 	t_stack	*pointerA;
 	t_stack	*pointerB;
 

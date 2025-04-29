@@ -6,7 +6,7 @@
 /*   By: mesasaki <mesasaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:42:25 by mesasaki          #+#    #+#             */
-/*   Updated: 2025/04/28 22:41:32 by mesasaki         ###   ########.fr       */
+/*   Updated: 2025/04/29 19:40:13 by mesasaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	parse_and_store(int *arr, char **argv, int argc)
 	while (i < argc)
 	{
 		if (is_number(argv[i]) == NOT_NUMBER || over_int(argv[i]) == NOT_NUMBER)
-			return (write(2, "Error\n", 6), 1);
+			return (NOT_NUMBER);
 		arr[c] = ft_atoi(argv[i]);
 		i++;
 		c++;
@@ -95,15 +95,24 @@ int	main(int argc, char **argv)
 	arr = malloc(sizeof(int) * n);
 	id_arr = malloc(sizeof(unsigned int) * n);
 	if (!arr || !id_arr)
-		return (1);
+		return (write(2, "Error\n", 6), 1);
 	if (parse_and_store(arr, argv, argc))
-		return (1);
+		return (write(2, "Error\n", 6), 1);
+	if(compare_n(arr, n))
+		return (write(2, "Error\n", 6), 1);
 	rank_compress(arr, id_arr, n);
 	make_node(&stack_a, id_arr, n);
-	if (compare_number(&stack_a) == NOT_NUMBER)
-		return (write(2, "Error\n", 6), 1);
 	push_and_sort(&stack_a, &stack_b, n);
+	
 }
+
+// int i;
+// i = 0;
+// while(i < n)
+// 	{
+// 		ft_printf("%d\n", arr[i]);//arrの配列に、引数の数字が入っている状態
+// 		i++;
+// 	}
 
 // void	print_stack(t_stack *top)
 // {
