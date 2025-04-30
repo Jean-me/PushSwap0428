@@ -6,7 +6,7 @@
 /*   By: mesasaki <mesasaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 19:45:41 by mesasaki          #+#    #+#             */
-/*   Updated: 2025/04/29 19:29:25 by mesasaki         ###   ########.fr       */
+/*   Updated: 2025/04/30 15:16:21 by mesasaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,13 @@ int	over_int(char *str)
 	return (NUMBER);
 }
 
-int compare_n(int *arr, int n)
+int	compare_n(int *arr, int n)
 {
-	int i, j;
+	int	i;
+	int	j;
 
 	i = 0;
-	while (i < n)  // 最後の1つは比較対象がないので n - 1 まで
+	while (i < n)
 	{
 		j = i + 1;
 		while (j < n)
@@ -76,70 +77,3 @@ int compare_n(int *arr, int n)
 	}
 	return (NUMBER);
 }
-
-
-// int compare_n(int *arr, int n)
-// {
-// 	int first;
-// 	int next;
-// 	int i;
-// 	int c;
-
-// 	i = 0;
-// 	c = 1;
-	
-// 	first = arr[i];
-// 	while (i < n)//引数分繰り返す
-// 	{
-// 		next = arr[c];
-// 		while (c < n)
-// 		{
-// 			if (first == next)
-// 				return (NOT_NUMBER);
-// 			next = arr[c++];
-// 		}
-// 		first = arr[i++];
-// 		c = i + 1;
-// 	}
-// 	return (NUMBER);
-// }
-
-int	compare_number(t_stack **stack)
-{
-	t_stack	*pointerA;
-	t_stack	*pointerB;
-
-	pointerA = *stack;
-	while (pointerA != NULL)
-	{
-		pointerB = pointerA->next;
-		while (pointerB != NULL)
-		{
-			if (pointerA->value == pointerB->value)
-			{
-				return (NOT_NUMBER);
-			}
-			pointerB = pointerB->next;
-		}
-		pointerA = pointerA->next;
-	}
-	return (NUMBER);
-}
-
-// int arguments_check(int argc, char **str)
-// {
-// 	int i;
-
-// 	i = 0;
-// 	while(i < argc)
-// 	{
-// 		if (is_number(str[i]) == NOT_NUMBER)
-// 			return (NOT_NUMBER);
-// 		if (over_int(str[i]) == NOT_NUMBER)
-// 			return (NOT_NUMBER);
-// 		if (compare_number() == NOT_NUMBER)
-// 			return (NOT_NUMBER);
-// 		i++;
-// 	}
-// 	return (NUMBER);
-// }

@@ -6,7 +6,7 @@
 /*   By: mesasaki <mesasaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:42:25 by mesasaki          #+#    #+#             */
-/*   Updated: 2025/04/29 19:40:13 by mesasaki         ###   ########.fr       */
+/*   Updated: 2025/04/30 15:17:53 by mesasaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	parse_and_store(int *arr, char **argv, int argc)
 	return (0);
 }
 
-void make_node(t_stack **a, unsigned int *id_arr, int n)
+void	make_node(t_stack **a, unsigned int *id_arr, int n)
 {
 	int	i;
 
@@ -98,12 +98,11 @@ int	main(int argc, char **argv)
 		return (write(2, "Error\n", 6), 1);
 	if (parse_and_store(arr, argv, argc))
 		return (write(2, "Error\n", 6), 1);
-	if(compare_n(arr, n))
+	if (compare_n(arr, n))
 		return (write(2, "Error\n", 6), 1);
 	rank_compress(arr, id_arr, n);
 	make_node(&stack_a, id_arr, n);
 	push_and_sort(&stack_a, &stack_b, n);
-	
 }
 
 // int i;
