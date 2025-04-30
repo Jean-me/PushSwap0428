@@ -6,7 +6,7 @@
 /*   By: mesasaki <mesasaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 19:58:07 by mesasaki          #+#    #+#             */
-/*   Updated: 2025/04/30 15:18:39 by mesasaki         ###   ########.fr       */
+/*   Updated: 2025/04/30 16:46:05 by mesasaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,8 @@ int				over_int(char *str);
 int				ft_isdigit(int c);
 int				is_number(char *str);
 int				compare_n(int *arr, int n);
+void			bury_array(int *array, unsigned int *id_arr);
+void			bury_stack(t_stack *stack);
+void			bury_all(int *array, unsigned int *id_arr,
+					t_stack *stack_a, t_stack *stack_b);
 #endif

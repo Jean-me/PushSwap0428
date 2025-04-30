@@ -6,7 +6,7 @@
 /*   By: mesasaki <mesasaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:42:25 by mesasaki          #+#    #+#             */
-/*   Updated: 2025/04/30 15:17:53 by mesasaki         ###   ########.fr       */
+/*   Updated: 2025/04/30 16:40:38 by mesasaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ unsigned int	*rank_compress(int *arr, unsigned int *id_arr, int num)
 		mask[id] = true;
 		i++;
 	}
+	free (mask);
 	return (id_arr);
 }
 
@@ -103,6 +104,7 @@ int	main(int argc, char **argv)
 	rank_compress(arr, id_arr, n);
 	make_node(&stack_a, id_arr, n);
 	push_and_sort(&stack_a, &stack_b, n);
+	bury_all(arr, id_arr, stack_a, stack_b);
 }
 
 // int i;
